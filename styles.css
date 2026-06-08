@@ -43,6 +43,7 @@ a:hover {
 .submitbar,
 .notice,
 .lookup-panel,
+.success-panel,
 .experiment-card {
   background: var(--surface);
   border: 1px solid var(--line);
@@ -60,6 +61,7 @@ a:hover {
 }
 
 h1,
+h2,
 h3 {
   margin-top: 0;
 }
@@ -73,6 +75,12 @@ h1 {
 h3 {
   margin-bottom: 8px;
   font-size: 16px;
+}
+
+h2 {
+  margin-bottom: 8px;
+  font-size: 24px;
+  line-height: 1.25;
 }
 
 .status-pill {
@@ -92,6 +100,17 @@ h3 {
 
 .lookup-panel {
   padding: 20px;
+}
+
+.success-panel {
+  padding: 32px 24px;
+  text-align: center;
+}
+
+.success-panel p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 18px;
 }
 
 .lookup-form {

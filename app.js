@@ -24,6 +24,7 @@ const form = document.querySelector("#surveyForm");
 const ownerBadge = document.querySelector("#ownerBadge");
 const messageBox = document.querySelector("#messageBox");
 const submitBar = document.querySelector("#submitBar");
+const successPanel = document.querySelector("#successPanel");
 const progressText = document.querySelector("#progressText");
 const toast = document.querySelector("#toast");
 
@@ -45,6 +46,16 @@ function showToast(message) {
   setTimeout(() => {
     toast.hidden = true;
   }, 2400);
+}
+
+function showSuccessPage() {
+  document.querySelector(".topbar").hidden = true;
+  lookupPanel.hidden = true;
+  messageBox.hidden = true;
+  form.hidden = true;
+  submitBar.hidden = true;
+  successPanel.hidden = false;
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 function jsonp(params) {
@@ -327,7 +338,7 @@ form.addEventListener("submit", async (event) => {
       creator: currentCreator,
       answers
     });
-    showToast("已提交，感谢确认");
+    showSuccessPage();
   } catch (error) {
     showMessage(error.message || "提交失败，请稍后再试");
   } finally {
